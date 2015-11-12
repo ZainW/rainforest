@@ -1,10 +1,10 @@
 <h3>Reviews</h3>
 
 <p>Reviews for <%= @product.name %></p>
-<p>Name: <%= product.name %></p>
-<p>Description: <%= product.description%></p>
-<p>Price: <%= product.price_in_cents%></p>
-<p>ID: <%= product.id %></p>
+<p>Name: <%= @product.name %></p>
+<p>Description: <%= @product.description%></p>
+<p>Price: <%= @product.price_in_cents%></p>
+<p>ID: <%= @product.id %></p>
 
 <% @product.reviews.each do |review| %>
 	<p>
