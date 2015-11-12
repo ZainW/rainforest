@@ -4,6 +4,8 @@
 	<p>Description: <%= product.description%></p>
 	<p>Price: <%= product.price_in_cents%></p>
 	<p>ID: <%= product.id %></p>
+	<%= link_to "Show Product", "/products/#{product.id}"%>
 	<p>-----------------------------------------------</p>
+
 	
 <% end %>
