@@ -31,4 +31,3 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
   end
 end
-end

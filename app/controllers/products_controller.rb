@@ -4,24 +4,24 @@ class ProductsController < ApplicationController
   end
 
   def show
-  	@product = Product.find(params:id)
+  	@product = Product.find(params[:id])
   	if current_user
       @review = @product.reviews.build
   	end
   end
 
   def new
-  	@product = Person.new
+  	@product = Product.new
   end
 
   def edit
   	@product = Product.new(params[:id])
   end
   def create
-  	@product = Product.new(product_params)
+  	@product = Product.new(products_params)
   	
   	if @product.save
-  		redirect_to products_url
+  		redirect_to product_url
   	else
   		render :new
 		end
