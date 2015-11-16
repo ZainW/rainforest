@@ -18,10 +18,10 @@ class ProductsController < ApplicationController
   	@product = Product.find(params[:id])
   end
   def create
-  	@product = Product.new(products_params)
+  	@product = Product.new(product_params)
   	
   	if @product.save
-  		redirect_to product_url
+  		redirect_to products_url
   	else
   		render :new
 		end
