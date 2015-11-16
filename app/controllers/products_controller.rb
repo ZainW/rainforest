@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-  	@product = Product.new(params[:id])
+  	@product = Product.find(params[:id])
   end
   def create
   	@product = Product.new(products_params)
