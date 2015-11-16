@@ -12,6 +12,9 @@
 	  <% if review.user != nil %>
 	    <em> by <%= review.user.name %></em>
 	    Added on: <%= review.created_at %>
+      <div class="actions">
+          <%= link_to "Delete Review ", "/products/#{@product.id}/reviews/#{review.id}", method: "delete" %>
+        </div>
 	  <% end %>
 	</p>
   <% end %>
@@ -28,8 +31,10 @@
         <% @review.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
+
         </ul>
       </div>
+
     <% end %>
 
     <div class="field">
@@ -39,6 +44,7 @@
     <div class="actions">
       <%= f.submit %>
     </div>
+    
   <% end %>
 
 <% else %>
