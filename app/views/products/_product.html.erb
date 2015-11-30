@@ -1,0 +1,11 @@
+
+
+
+<p>Name: <%= product.name %></p>
+<p>Description: <%= product.description%></p>
+<p>Price: $<%= product.formatted_price%></p>
+# <%= link_to "Show Product", "/products/#{product.id}"%>
+<%= link_to "Edit", "/products/#{product.id}/edit"%>
+<%= link_to 'Delete Item',  "/products/#{product.id}",  method: "delete" %>
+
+<p>-----------------------------------------------</p> 

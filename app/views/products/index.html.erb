@@ -1,15 +1,9 @@
-<h1 id="all_products">All Products</h1>
 <h2><%=link_to "Add a Product", "/products/new"%></h2>
-<% @products.each do |product|  %>
-	<p>Name: <%= product.name %></p>
-	<p>Description: <%= product.description%></p>
-	<p>Price: $<%= product.formatted_price%></p>
-	<!-- <p>ID: <%= product.id %></p> -->
-	<%= link_to "Show Product", "/products/#{product.id}"%>
-	<%= link_to "Edit", "/products/#{product.id}/edit"%>
-	<%= link_to 'Delete Item',  "/products/#{product.id}",  method: "delete" %>
-
-	<p>-----------------------------------------------</p>
-
-	
+<%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
 <% end %>
+
+<div id="products">
+	<%= render @products %>
+</div>
