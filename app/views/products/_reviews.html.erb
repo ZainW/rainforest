@@ -1,14 +1,14 @@
 <% @product.reviews.each do |review| %>
   <div class="review">
     <div class="poster">
-      Posted by <%= review.user.name %> on <%= review.created_at %>
+      <em> by <%= review.user.name %></em>
+      Added on: <%= review.created_at %>
     </div>
     <p class="comment">
       <%= review.comment %>
     </p>
     <% if review.user != nil %>
-	    <em> by <%= review.user.name %></em>
-	    Added on: <%= review.created_at %>
+	    
       <div class="actions">
           <%= link_to "Delete Review ", "/products/#{@product.id}/reviews/#{review.id}", method: "delete" %>
         </div>
